@@ -10,27 +10,38 @@
 #include <new>
 #include <string>
 
+#include <thread>
+
 #include "SimpleClass.hpp"
 
 using namespace std;
 
-
+void calcFields(int bin) {
+    for (int i = 3; i < 9; i++) {
+        
+        if (i % 2 == bin) {
+            continue;
+        }
+        
+//        cout << "-------------------------------------------------------" << endl;
+//        cout << "-------------------" << "Square side: " << i << "----------------------" << endl;
+//        cout << "-------------------------------------------------------" << endl;
+        
+        Field field(i, 6);
+        field.calculateBlocksCount();
+    }
+}
 
 
 int main (int argc, const char * argv[]) {
 
     
-    for (int i = 3; i < 6; i++) {
-        
-        cout << "-------------------------------------------------------" << endl;
-        cout << "-------------------" << "Square side: " << i << "----------------------" << endl;
-        cout << "-------------------------------------------------------" << endl;
-        
-        Field field(i, 0);
-        field.calculateBlocksCount();
-    }
+
+    thread even(calcFields, 0);
+    thread odd(calcFields, 1);
     
-    
+    even.join();
+    odd.join();
     
     
 //    vector<int> v;
