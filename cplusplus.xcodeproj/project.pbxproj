@@ -7,7 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DD45B88A206E23120049F739 /* Square.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DD45B888206E23120049F739 /* Square.cpp */; };
 		DD8F26C1206CF3570031337B /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DD8F26C0206CF3570031337B /* main.cpp */; };
+		DD8F26C9206CF3A50031337B /* SimpleClass.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DD8F26C7206CF3A50031337B /* SimpleClass.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -23,8 +25,12 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		DD45B888206E23120049F739 /* Square.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Square.cpp; sourceTree = "<group>"; };
+		DD45B889206E23120049F739 /* Square.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Square.hpp; sourceTree = "<group>"; };
 		DD8F26BD206CF3570031337B /* cplusplus */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = cplusplus; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD8F26C0206CF3570031337B /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		DD8F26C7206CF3A50031337B /* SimpleClass.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = SimpleClass.cpp; sourceTree = "<group>"; };
+		DD8F26C8206CF3A50031337B /* SimpleClass.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = SimpleClass.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +64,10 @@
 			isa = PBXGroup;
 			children = (
 				DD8F26C0206CF3570031337B /* main.cpp */,
+				DD8F26C8206CF3A50031337B /* SimpleClass.hpp */,
+				DD8F26C7206CF3A50031337B /* SimpleClass.cpp */,
+				DD45B889206E23120049F739 /* Square.hpp */,
+				DD45B888206E23120049F739 /* Square.cpp */,
 			);
 			path = cplusplus;
 			sourceTree = "<group>";
@@ -119,6 +129,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DD8F26C9206CF3A50031337B /* SimpleClass.cpp in Sources */,
+				DD45B88A206E23120049F739 /* Square.cpp in Sources */,
 				DD8F26C1206CF3570031337B /* main.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

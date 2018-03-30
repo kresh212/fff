@@ -7,9 +7,40 @@
 //
 
 #include <iostream>
+#include <new>
+#include <string>
 
-int main(int argc, const char * argv[]) {
-    // insert code here...
-    std::cout << "Hello, World!\n";
+#include "SimpleClass.hpp"
+
+using namespace std;
+
+
+
+
+int main (int argc, const char * argv[]) {
+
+    
+    for (int i = 3; i < 6; i++) {
+        
+        cout << "-------------------------------------------------------" << endl;
+        cout << "-------------------" << "Square side: " << i << "----------------------" << endl;
+        cout << "-------------------------------------------------------" << endl;
+        
+        Field field(i, 0);
+        field.calculateBlocksCount();
+    }
+    
+    
+    
+    
+//    vector<int> v;
+//    for (int i = 0; i < 100; i++) {
+//        v.push_back(i * i);
+//    }
+//    
+//    for (int i = 0; i < 100; i++) {
+//        cout << v[i] << endl;
+//    }
+    
     return 0;
 }
