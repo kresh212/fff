@@ -27,6 +27,8 @@ void calcFields(int bin) {
 //        cout << "-------------------" << "Square side: " << i << "----------------------" << endl;
 //        cout << "-------------------------------------------------------" << endl;
         
+        //
+        
         Field field(i, 6);
         field.calculateBlocksCount();
     }
