@@ -9,27 +9,54 @@
 #include <iostream>
 #include <new>
 #include <string>
-
 #include <thread>
 
 #include "SimpleClass.hpp"
 
 using namespace std;
 
-void calcFields(int bin) {
-    for (int i = 3; i < 9; i++) {
+void calcFields(vector<int> sides) {
+    for (int i = 0; i < sides.size(); i++) {
         
-        if (i % 2 == bin) {
-            continue;
-        }
-        
+        int side = sides[i];
 //        cout << "-------------------------------------------------------" << endl;
 //        cout << "-------------------" << "Square side: " << i << "----------------------" << endl;
 //        cout << "-------------------------------------------------------" << endl;
         
-        //
-        
-        Field field(i, 6);
+        int blocksCount = 6;
+        switch (side) {
+            case 3: {
+                blocksCount = 3;
+                break;
+            }
+            case 4: {
+                blocksCount = 5;
+                break;
+            }
+            case 5:
+            case 6: {
+                blocksCount = 6;
+                break;
+            }
+            case 7: {
+                blocksCount = 6;
+                break;
+            }
+            case 8: {
+                blocksCount = 6;
+                break;
+            }
+            case 9: {
+                blocksCount = 6;
+                break;
+            }
+            case 10: {
+                blocksCount = 6;
+                break;
+            }
+        }
+
+        Field field(side, blocksCount);
         field.calculateBlocksCount();
     }
 }
@@ -37,23 +64,27 @@ void calcFields(int bin) {
 
 int main (int argc, const char * argv[]) {
 
-    
+    int firstArr[] = {3,4,5,6};
+    vector<int> firstV(firstArr, firstArr + sizeof(firstArr) / sizeof(int));
 
-    thread even(calcFields, 0);
-    thread odd(calcFields, 1);
+    int secondArr[] = {7};
+    vector<int> secondV(secondArr, secondArr + sizeof(secondArr) / sizeof(int));
+
+    int thridArr[] = {8};
+    vector<int> thridV(thridArr, thridArr + sizeof(thridArr) / sizeof(int));
+
+    int fourthArr[] = {9};
+    vector<int> fourthV(fourthArr, fourthArr + sizeof(fourthArr) / sizeof(int));
+
+    thread first(calcFields, firstV);
+    thread second(calcFields, secondV);
+    thread thrid(calcFields, thridV);
+    thread fourth(calcFields, fourthV);
     
-    even.join();
-    odd.join();
-    
-    
-//    vector<int> v;
-//    for (int i = 0; i < 100; i++) {
-//        v.push_back(i * i);
-//    }
-//    
-//    for (int i = 0; i < 100; i++) {
-//        cout << v[i] << endl;
-//    }
+    first.join();
+    second.join();
+    thrid.join();
+    fourth.join();
     
     return 0;
 }

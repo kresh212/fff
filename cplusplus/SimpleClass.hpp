@@ -13,7 +13,10 @@
 #include <iostream>
 #include <string>
 #include <vector>
-
+#include <thread>
+#include <chrono>
+#include <ctime>
+#include <fstream>
 #include "Square.hpp"
 
 #endif /* SimpleClass_hpp */
@@ -32,6 +35,7 @@ class Field {
     // ячейки поля
     vector<Square *> squares;
     
+
     // новое поле
     void setPosition(int position, int nextBlocksCount, vector<int> blocksIndexes);
     // создаем поле
@@ -40,21 +44,23 @@ class Field {
     void prepareField();
     // проверка выборки
     bool checkField();
+    // проверка областей и линии
+    bool checkSquaresInCurrentLine(Square *square, bool horizontal);
     // установка новой комбинации блоков
     void setBlocks(vector<int> blocks);
     
     void searchPath();
     
+    void printPath(vector<Square *> pathSquares);
+
     vector<Square *> searchPathFor(Square *square);
-    vector<Square *> downSquares(vector<Square *> upSquares);
+    vector<Square *> downSquares(vector<Square *> upSquares, bool horizontal);
     
 public:
     // инит со стороной
     Field(int s, int mB);
     // найти все варианты блоков для поля
-    void calculateBlocksCount();
-    
-    
+    void calculateBlocksCount();    
 };
 
 
